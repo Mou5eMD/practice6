@@ -1,21 +1,18 @@
 package com.mirea.mikhailpiskunov.notebook;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         editText1 = findViewById(R.id.editText1);
         textView = findViewById(R.id.textView);
-        @SuppressLint("SdCardPath") String pathh = "/data/data/ru.mirea.fominykh.notebook/files/fileName.txt";
+        @SuppressLint("SdCardPath") String pathh = "/data/data/com.mirea.mikhailpiskunov.notebook/files/fileName.txt";
         File file = new File(pathh);
         if (file.exists()) {
             try {
@@ -73,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveText(View view) throws IOException {
         String fileName = editText1.getText().toString();
         fileName= fileName+".txt";
-        @SuppressLint("SdCardPath") String path = "/data/data/ru.mirea.fominykh.notebook/files/"+fileName;
+        @SuppressLint("SdCardPath") String path = "/data/data/com.mirea.mikhailpiskunov.notebook/files/"+fileName;
         File file = new File(path);
         String text=editText.getText().toString();
         if (file.exists()) {
